@@ -1,4 +1,5 @@
-"""import google_api_python_client"""
+#Author Justice.P for the Dark Echo Community
+
 import json
 import discord
 import googleapiclient
@@ -27,10 +28,10 @@ client = Bot(command_prefix=BOT_PREFIX)
 """---------------------------------------------------------------------------------------------------"""
 
 """Starting Command to Authorize Google Drive And Sheets"""
-
+Credential_File = parser.get('Google Settings', 'credential_file')
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name('DEMemberManager-48121228118a.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(Credential_File, scope)
 
 gc = gspread.authorize(credentials)
 """---------------------------------------------------------------------------------------------------"""
